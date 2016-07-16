@@ -1,4 +1,0 @@
-var ConfigData = {
-	CreateData:function() {
-	}
-}
