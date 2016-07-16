@@ -10,24 +10,19 @@ def getCompanyData():
 	csvFile = open(dataPath)
 	i =1
 	for line in csvFile:
-		# if i == 1:
-		# 	print line
-		# 	i = i+1
-		# else :
-		# 	continue
+		if i == 1:
+			i = i+1
+			continue
 		strings = line.split(',')
-		# print strings
-		# print '\n'
 		companyID = strings[0]
 		buyCompany = strings[2]
-		if  i ==61:
-			print strings
 		getStockWay = strings[6]
-
-		print i
-		print '\n'
-		i = i+1
-		print buyCompany
+		# print i
+		# print '\n'
+		# i = i+1
+		# if  i ==5:
+		# 	break
+		# print buyCompany
 		if companyID not in companyData:
 			companyData[companyID] = dict()
 			companyData[companyID][getStockWay] = set()  #此处应该是一个集合。
@@ -41,6 +36,8 @@ def getCompanyData():
 
 if __name__ == '__main__':
 	companyData  = getCompanyData()
-	#print companyData
+	tmp =  companyData["603188"]["支付现金"]
+	for tmps in tmp:
+		print tmps
 
 
